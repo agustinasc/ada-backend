@@ -1,0 +1,17 @@
+[
+  {
+    "nombre": "Matias",
+    "telefono": 3513480788,
+    "correoElectronico": "matias@gmail.com"
+  },
+  {
+    "nombre": "Natalia",
+    "telefono": 3833280752,
+    "correoElectronico": "natalia@gmail.com"
+  },
+  {
+    "nombre": "Virginia",
+    "telefono": 3513834568,
+    "correoElectronico": "virginia@gmail.com"
+  }
+]
