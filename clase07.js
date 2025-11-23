@@ -92,8 +92,70 @@ const net = require("net")
 
 /* Ejercicio 04 */
 
+const server = net.createServer((socket) => {
+    console.log("Cliente conectado");
+    
+    socket.on("data", (data) => {
+        console.log("Mensaje recibido:", data.toString());
+        
+        socket.write("Mensaje recibido")
+        
+        //socket.end();
+    })
+    socket.on("end", () => {
+    console.log("Cliente desconectado (el cliente cortó)");
+});
 
+    socket.on("error", (err)=>{
+        console.log("Error en la conexion", err.message);
 
-/* Ejercicio 05 */
+        //socket.destroy()
+    })
+})
+server.listen(5000, () => {
+    console.log("Servidor escuchando del ej 04 en el puerto 5000");
+})
 
+/* Ejercicio 07 */
+
+// let clientes = []
+
+// const server = net.createServer((socket)=>{
+//     console.log("Un cliente se ha conectado");
+    
+//     clientes.push(socket)
+
+//     for (let cliente of clientes){
+//         if(cliente !== socket){
+//             cliente.write("Un nuevo cliente se ha unido al chat")
+//         }
+//     }
+
+//     socket.on("data", (data)=> {
+//         const mensaje = data.toString().trim()
+//         console.log("Mensaje recibido", mensaje);
+        
+//         for (let cliente of clientes){
+//             if(cliente !== socket){
+//                 cliente.write(`El cliente dice ${mensaje}`)
+//             }
+//         }
+//     })
+//     socket.on("error", (err)=>{
+//         console.log("Error en un cliente", err.message);
+        
+//     })
+//     socket.on("end", ()=> {
+//         console.log("un cliente se ha desconectado");
+        
+//         clientes = clientes.filter(cliente => cliente !== socket)
+
+//         for (let cliente of clientes){
+//             cliente.write("Un cliente salio del char")
+//         }
+//     })
+// })
+// server.listen(5000, () => {
+//     console.log("Servidor de chat escuchando en el puerto 5000 del ejercicio 7");
+// })
 /* Ejercicio 06 */
