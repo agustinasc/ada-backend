@@ -2,30 +2,30 @@ const net = require("net")
 
 //Ejercicio 01
 
-// const server = net.createServer((socket) => {
-//     console.log("un cliente se ha conectado");
+const server = net.createServer((socket) => {
+    console.log("un cliente se ha conectado");
     
-//     socket.on("data", (data => {
-//         const mensaje = data.toString()
-//         console.log("Mensaje recibido del cliente", mensaje);
+    socket.on("data", (data => {
+        const mensaje = data.toString()
+        console.log("Mensaje recibido del cliente", mensaje);
         
 
-//         socket.write(`Eco: ${mensaje}`)
-//     }))
-//     socket.on("end", () => {
-//         console.log("El cliente se ha desconectado (end)");
+        socket.write(`Eco: ${mensaje}`)
+    }))
+    socket.on("end", () => {
+        console.log("El cliente se ha desconectado (end)");
         
-//     })
-//     socket.on("close", () => {
-//         console.log("La conexion con el cliente se ha cerrado");
+    })
+    socket.on("close", () => {
+        console.log("La conexion con el cliente se ha cerrado");
         
-//     })
-// })
+    })
+})
 
-// server.listen(5000, () => {
-//     console.log("Servidor escuchando el ECO en el puerto 5000");
+server.listen(5000, () => {
+    console.log("Servidor escuchando el ECO en el puerto 5000");
     
-// })
+})
 
 /* Ejercicio 02 */
 
@@ -92,29 +92,29 @@ const net = require("net")
 
 /* Ejercicio 04 */
 
-const server = net.createServer((socket) => {
-    console.log("Cliente conectado");
+// const server = net.createServer((socket) => {
+//     console.log("Cliente conectado");
     
-    socket.on("data", (data) => {
-        console.log("Mensaje recibido:", data.toString());
+//     socket.on("data", (data) => {
+//         console.log("Mensaje recibido:", data.toString());
         
-        socket.write("Mensaje recibido")
+//         socket.write("Mensaje recibido")
         
-        //socket.end();
-    })
-    socket.on("end", () => {
-    console.log("Cliente desconectado (el cliente cortó)");
-});
+//         //socket.end();
+//     })
+//     socket.on("end", () => {
+//     console.log("Cliente desconectado (el cliente cortó)");
+// });
 
-    socket.on("error", (err)=>{
-        console.log("Error en la conexion", err.message);
+//     socket.on("error", (err)=>{
+//         console.log("Error en la conexion", err.message);
 
-        //socket.destroy()
-    })
-})
-server.listen(5000, () => {
-    console.log("Servidor escuchando del ej 04 en el puerto 5000");
-})
+//         //socket.destroy()
+//     })
+// })
+// server.listen(5000, () => {
+//     console.log("Servidor escuchando del ej 04 en el puerto 5000");
+// })
 
 /* Ejercicio 07 */
 

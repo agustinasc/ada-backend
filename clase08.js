@@ -127,22 +127,45 @@ const net = require("net")
 
 /* Ejercicio 07 */
 
-const client = net.createConnection({port: 5000}, () => {
-    console.log("Conectando al servidor");
+// const client = net.createConnection({port: 5000}, () => {
+//     console.log("Conectando al servidor");
     
-})
-client.on("error", (err) => {
-    console.log("Error en la conexion:", err.message);
-    client.destroy()
-    console.log("Conexion destruida");
+// })
+// client.on("error", (err) => {
+//     console.log("Error en la conexion:", err.message);
+//     client.destroy()
+//     console.log("Conexion destruida");
     
-})
-client.on("data", (data) => {
-    console.log("Servidor", data.toString());
+// })
+// client.on("data", (data) => {
+//     console.log("Servidor", data.toString());
     
-})
-client.on("end", () => {
-    console.log("Servidor cerro la conexion");
+// })
+// client.on("end", () => {
+//     console.log("Servidor cerro la conexion");
     
-})
+// })
+
 /* Ejercicio 08 */
+
+const client = net.createConnection({ port: 5000}, () => {
+    console.log("Cliente conectado al servidor");
+    
+    client.unref()
+    console.log("Socket con unref()");
+    
+    setTimeout(() =>{
+        client.ref()
+        console.log("Socket marcado con ref().El proceso ahora permanece activo");
+        
+    }, 5000)
+
+    client.on("data", (data)=>{
+        console.log("Servidor", data.toString());
+        
+    })
+    client.on("end", () =>{
+        console.log("Servidor cerro la conexion");
+        
+    })
+})
