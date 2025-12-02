@@ -41,8 +41,51 @@ const crypto = require("crypto");
 
 /* Ejercicio 03 */
 
-const num1 = readline.questionFloat("Ingresa el primer numero:")
-const num2 = readline.questionFloat("Ingresa el segundo numero:")
+// const num1 = readline.questionFloat("Ingresa el primer numero:")
+// const num2 = readline.questionFloat("Ingresa el segundo numero:")
 
+// console.log("1. Suma: ");
+// console.log("2. Resta: ");
+// console.log("3. Multiplicacion: ");
+// console.log("4. Division: ");
 
-/* Ejercicio 02 */
+// const opcion = readline.question("Elegi una operacion 1-4")
+
+// let resultado
+
+// switch (opcion) {
+//     case "1":
+//         resultado = num1 + num2 
+//         break;
+//     case "2":
+//         resultado = num1 - num2 
+//         break;
+//     case "3":
+//         resultado = num1 * num2 
+//         break;
+//     case "4":
+//         if(num2===0){
+//             console.log("No se puede dividir por 0");
+//             process.exit()
+//         }
+//         resultado = num1 / num2 
+//         break;
+//     default:
+//         console.log("opcion no valida");
+        
+//         break;
+// }
+// console.log(`Resultado ${resultado}`);
+
+/* Ejercicio 04 */
+
+// const password = readline.question("Ingrese la contraseña: ")
+
+// if (password === "secreto123") {
+//     console.log("Acceso concedido");
+    
+// } else {
+//     console.log("Acceso denegado");
+    
+// }
+

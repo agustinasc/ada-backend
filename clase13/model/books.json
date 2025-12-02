@@ -1,0 +1,5 @@
+[
+  { "id": 1, "titulo": "El Principito", "autor": "Antoine de Saint-Exupéry" },
+  { "id": 2, "titulo": "Cien Años de Soledad", "autor": "Gabriel García Márquez" },
+  { "id": 3, "titulo": "1984", "autor": "George Orwell" }
+]
